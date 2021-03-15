@@ -1,0 +1,14 @@
+name: My first workflow
+
+on: [push]
+
+jobs:
+  simple-job:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Print hello world
+        run: echo "Hello world from GA"
+      - name: Check pip version and python version
+        run: |
+          pwd
+          echo $PATH
