@@ -1,0 +1,16 @@
+name: Pull request checks
+
+on: [pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run flake8
+        run: flake8
+      - name: Run tests
+        run: pytest
