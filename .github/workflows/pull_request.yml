@@ -1,4 +1,4 @@
-name: Pull request checks
+name: Tests
 
 on: [pull_request]
 
@@ -9,7 +9,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip3 install -r requirements.txt
       - name: Run flake8
         run: flake8
       - name: Run tests
